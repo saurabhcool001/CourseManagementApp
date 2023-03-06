@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+        <variable
+            name="clickHandler"
+            type="com.example.lma.AddEditActivity.AddEditClickHandlers" />
+
+        <variable
+            name="course"
+            type="com.example.lma.entity.Course" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddEditActivity">
+
+        <EditText
+            android:id="@+id/T_CourseName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="136dp"
+            android:minHeight="48dp"
+            android:ems="10"
+            android:text="@={course.courseName}"
+            android:hint="Course Name"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/T_CourseUnitPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:minHeight="48dp"
+            android:ems="10"
+            android:text="@={course.unitPrice}"
+            android:hint="Course Price"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/T_CourseName"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/T_CourseName"
+            app:layout_constraintTop_toBottomOf="@+id/T_CourseName" />
+
+        <Button
+            android:id="@+id/s_SubmitBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="Submit"
+            android:onClick="@{clickHandler::onSubmitBtnClicked}"
+            app:layout_constraintEnd_toEndOf="@+id/T_CourseUnitPrice"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="@+id/T_CourseUnitPrice"
+            app:layout_constraintTop_toBottomOf="@+id/T_CourseUnitPrice" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
